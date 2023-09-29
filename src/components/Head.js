@@ -3,6 +3,10 @@ import { useDispatch, useSelector } from 'react-redux'
 import { toggleMenu } from '../utils/appSlice';
 import { YOUTUBE_SEARCH_API } from '../utils/constant';
 import { cacheResults } from '../utils/searchSlice';
+import youtubedark1 from '../images/youtubedark1.png'
+import {FaUserCircle} from 'react-icons/fa'
+import {GiHamburgerMenu} from 'react-icons/gi'
+import {BsSearch} from 'react-icons/bs'
 
 const Head = () => {
     const [searchQuery, setSearchQuery] = useState("");
@@ -50,26 +54,23 @@ const getSearchSuggestions = async() =>{
         dispatch(toggleMenu());
     }
   return (
-    <div className='grid grid-flow-col p-5 m-1 shadow-lg'>
+    <div className='grid grid-flow-col p-5 m-0 shadow-lg bg-[#0f0f0f]'>
         {/* First */}
-        <div className='flex col-span-1 '>
-
-            <img  onClick={() => toggleMenuHandler()} className="h-12 cursor-pointer" alt="ham-menu" src="https://cdn.iconscout.com/icon/free/png-256/free-hamburger-menu-462145.png?f=webp"/>
-
-           <a href="/"> <img className="h-12 mx-2" alt="youtube" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1505YocpYC8sqD01fUYDaMlc__4XHcy0NEH-tQQ5Om1NPGkodsXCat3mBTar6U04PS3U&usqp=CAU"/></a> 
-
+        <div className='flex col-span-1 m-auto '> 
+            <GiHamburgerMenu style={{color:'white', fontSize:'24px', margin:'auto'}} onClick={() => toggleMenuHandler()} />
+           <a href="/"> <img className="h-8 mx-4" alt="youtube" src={youtubedark1}/></a> 
         </div>
         {/* Second */}
 
         <div className='col-span-10 px-1 '>
             <div>
-            <input className='w-1/2 border border-gray-400 px-4 py-2 rounded-l-full' type="text" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} onFocus={()=>setShowSuggestions(true)} onBlur={()=>setShowSuggestions(false)}/>
-            <button className='bg-gray-400 border border-gray-400 text-white text-center px-4 py-2 rounded-r-full'>🔍</button>
+            <input className='w-1/2 bg-[#121212] text-white border border-gray-800 px-4 py-2 rounded-l-full' type="text" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} onFocus={()=>setShowSuggestions(true)} onBlur={()=>setShowSuggestions(false)}/>
+            <button className='bg-[#222222] border border-gray-800 hover:border-gray-800 text-white text-center px-4 py-3 rounded-r-full'><BsSearch  style={{color:'white', margin:'auto'}}/> </button>
             </div>
             {/* Suggestions */}
-          { showSuggestions && (<div className='absolute bg-white py-2 px-3 w-1/3 shadow-lg rounded-lg border border-gray-100'>
+          { showSuggestions && (<div className='absolute bg-[#121212] text-white py-2 px-3 w-1/3 shadow-lg rounded-lg border border-gray-800'> 
                 <ul>
-                    {suggestions.map((s)=>(   <li key={s} className='py-1 shadow-sm hover:bg-gray-100'>🔍 {s}</li>))}
+                    {suggestions.map((s)=>(   <li key={s} className=' flex py-1 shadow-sm hover:bg-gray-800'><BsSearch  style={{color:'white', marginRight:'14px'}}/> {s}</li>))}
                  
                    
                 </ul>
@@ -77,8 +78,8 @@ const getSearchSuggestions = async() =>{
            
         </div>
         {/* Third */}
-        <div className='col-span-1'>
-        <img className="h-10" alt="user" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpbF9MRc872DyqrFDJJ3MRq68r08IaEKCNGzAqYNpeSK38HOao_E2_50CtB2V4TGM_5ag&usqp=CAU"/>
+        <div className='col-span-1 m-auto'>
+        <FaUserCircle style={{color:'white', fontSize:'34px'}}/>
         </div>
     </div>
   )

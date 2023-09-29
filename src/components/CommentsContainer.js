@@ -1,5 +1,5 @@
 import React from 'react'
-
+import {FaUserCircle} from 'react-icons/fa'
 
 const commentsData = [
     {
@@ -66,8 +66,8 @@ const Comment =({data})=>{
     const {name, text} = data; 
 return (
     <>
-    <div className='flex shadow-sm bg-gray-100 p-2 rounded-lg my-2'> 
-        <img className='w-12 h-12 ' alt="user" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpbF9MRc872DyqrFDJJ3MRq68r08IaEKCNGzAqYNpeSK38HOao_E2_50CtB2V4TGM_5ag&usqp=CAU"/>
+    <div className='flex shadow-sm bg-[#0f0f0f] p-2 rounded-lg my-2 text-white'> 
+        <FaUserCircle style={{color:'#74AA9C', fontSize:'24px'}}/>
         <div className='px-3'> 
             <p className='font-bold'>{name}</p>
             <p> {text} </p>
@@ -82,9 +82,9 @@ return (
     <>
     <div>
         {comments.map((comment, index) =>(
-        <div key={index}>
+        <div className='text-sm' key={index}>
             <Comment  data={comment}/>
-            <div className='pl-5 border border-l-black ml-5'>
+            <div className='pl-5  ml-5 border border-r-0 border-t-0 border-b-0 border-l-gray-500'>
             <CommentsList comments={comment.replies}/>
             </div>
         </div>))}
@@ -95,9 +95,9 @@ return (
 
 const CommentsContainer = () => {
   return (
-    <div className='m-5 p-2'>
+    <div className='m-5 p-2 bg-[#0f0f0f] text-white w-8/12'>
         <h1 className='text-2xl font-bold'>Comments</h1>
-        <CommentsList comments={commentsData}/>
+        <CommentsList   comments={commentsData}/>
     </div>
   )
 }
