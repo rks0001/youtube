@@ -2,7 +2,7 @@ import React from 'react'
 import Button from './Button'
 
 
-const list = ["All", "Gaming", "Songs", "Live", "Soccer", "Cricker", "Cooking", "News"]
+const list = ["All", "Gaming", "Songs", "Live", "Soccer", "Cricket", "Cooking", "News"]
 const ButtonList = () => {
   return (
     <div className='flex pt-2 justify-items-start pl-4 text-sm font-medium  bg-[#0f0f0f]'>
