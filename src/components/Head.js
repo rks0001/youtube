@@ -54,11 +54,11 @@ const getSearchSuggestions = async() =>{
         dispatch(toggleMenu());
     }
   return (
-    <div className='grid grid-flow-col p-5 m-0 shadow-lg bg-[#0f0f0f]'>
+    <div className='grid grid-flow-col px-1 py-5 m-0 shadow-lg bg-[#0f0f0f]'>
         {/* First */}
         <div className='flex col-span-1 m-auto '> 
             <GiHamburgerMenu style={{color:'white', fontSize:'24px', margin:'auto'}} onClick={() => toggleMenuHandler()} />
-           <a href="/"> <img className="h-8 mx-4" alt="youtube" src={youtubedark1}/></a> 
+           <a href="/"> <img className="h-6 mx-4" alt="youtube" src={youtubedark1}/></a> 
         </div>
         {/* Second */}
 
