@@ -54,7 +54,7 @@ const getSearchSuggestions = async() =>{
         dispatch(toggleMenu());
     }
   return (
-    <div className='grid grid-flow-col px-1 py-5 m-0 shadow-lg bg-[#0f0f0f]'>
+    <div className='grid grid-flow-col px-1 py-3 m-0 shadow-lg bg-[#0f0f0f]'>
         {/* First */}
         <div className='flex col-span-1 m-auto '> 
             <GiHamburgerMenu style={{color:'white', fontSize:'24px', margin:'auto'}} onClick={() => toggleMenuHandler()} />
