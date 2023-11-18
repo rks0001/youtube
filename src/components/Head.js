@@ -54,15 +54,15 @@ const getSearchSuggestions = async() =>{
         dispatch(toggleMenu());
     }
   return (
-    <div className='grid grid-flow-col px-1 py-3 m-0 shadow-lg bg-[#0f0f0f]'>
+    <div className='grid grid-flow-col items-center px-6 md:px-1 py-3 m-0 shadow-lg bg-[#0f0f0f]'>
         {/* First */}
-        <div className='flex col-span-1 m-auto '> 
-            <GiHamburgerMenu style={{color:'white', fontSize:'24px', margin:'auto'}} onClick={() => toggleMenuHandler()} />
+        <div className='flex items-center col-span-2 m-auto '> 
+            <GiHamburgerMenu style={{color:'white', fontSize:'32px', margin:'auto'}} onClick={() => toggleMenuHandler()} />
            <a href="/"> <img className="h-6 mx-4" alt="youtube" src={youtubedark1}/></a> 
         </div>
         {/* Second */}
 
-        <div className='col-span-10 px-1 '>
+        <div className='col-span-8 px-1 '>
             <div>
             <input className='w-1/2 bg-[#121212] text-white border border-gray-800 px-4 py-2 rounded-l-full' type="text" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} onFocus={()=>setShowSuggestions(true)} onBlur={()=>setShowSuggestions(false)}/>
             <button className='bg-[#222222] border border-gray-800 hover:border-gray-800 text-white text-center px-4 py-3 rounded-r-full'><BsSearch  style={{color:'white', margin:'auto'}}/> </button>
